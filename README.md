@@ -1,6 +1,6 @@
 # WeiboDanmuDownloader
 [![version](https://img.shields.io/github/v/release/MociLSeng/WeiboDanmuDownloader)](https://github.com/MociLSeng/WeiboDanmuDownloader/releases)
-[![License](https://img.shields.io/github/license/MociLSeng/WeiboDanmuDownloader)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/github/license/MociLSeng/WeiboDanmuDownloader?logo=mit)](https://opensource.org/licenses/MIT)
 ![CodeSize](https://img.shields.io/github/languages/code-size/MociLSeng/WeiboDanmuDownloader)
 
 一个简单的微博直播回放弹幕下载工具
