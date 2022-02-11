@@ -18,6 +18,7 @@ public class Config {
     public static String cookie;
     public static int frequency = 10;
     public static int wait = 3000;
+    public static int one_skip_no_danmu = 600;
 
     public static void readConfig() throws IOException {
         String fileName = "./config.json";
@@ -32,6 +33,7 @@ public class Config {
                                 "{\"cookie\":\"cookie\"," +
                                         "\"frequency\":10," +
                                         "\"wait\":3000," +
+                                        "\"one_skip_no_danmu\":600" +
                                 "}").toString(4));
             } catch (IOException e) {
                 e.printStackTrace();
@@ -48,6 +50,7 @@ public class Config {
         frequency = json.getInt("frequency");
         wait= json.getInt("wait");
         cookie= json.getString("cookie");
+        one_skip_no_danmu= json.getInt("one_skip_no_danmu");
 
         if(frequency <= 1){
             frequency = 2;

@@ -22,6 +22,7 @@ public class OneLiveDanmuDownloader {
 
     private static int t = 1;
     private static int total = 0;
+    private static int noDanmuTick = 0;
 
     /**
      * @param filepath 保存位置，需要包括文件名
@@ -98,7 +99,16 @@ public class OneLiveDanmuDownloader {
                 t++;
             }
 
+            noDanmuTick = 0;
             next(scid, startTimeStamp, maxTs + 1L, list);
+        } else {
+            //超过配置中设定的无弹幕时间，停止获取弹幕
+            //这是为了防止一段时间内没人发弹幕，导致中断，获取不完整
+            if(noDanmuTick >= Config.one_skip_no_danmu / 10){
+                return;
+            }
+            noDanmuTick++;
+            next(scid, startTimeStamp, ts + 10001L, list);
         }
     }
     
